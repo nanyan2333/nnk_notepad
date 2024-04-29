@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane prefHeight="600" prefWidth="400" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nnknotepad.UiController">
+    <center>
+        <TextArea fx:id="textArea" onKeyPressed="#textAreaWatcher" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <ButtonBar prefHeight="0.0" prefWidth="266.0" BorderPane.alignment="CENTER">
+            <buttons>
+                <Label fx:id="rowLabel" text="行1" />
+                <Label fx:id="colLabel" prefHeight="0.0" text="列1" />
+                <Label fx:id="encodeLabel" text="编码UTF-8" />
+            </buttons>
+        </ButtonBar>
+    </bottom>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu text="file">
+                <MenuItem id="newFile" onAction="#openNewFile" text="new" />
+                <MenuItem id="openFile" mnemonicParsing="false" onAction="#openFile" text="open file" />
+                <MenuItem id="saveFile" mnemonicParsing="false" onAction="#saveFile" text="save" />
+                <MenuItem id="saveFileWithPath" mnemonicParsing="false" onAction="#saveFileAs" text="save as" />
+            </Menu>
+            <Menu mnemonicParsing="false" text="operation">
+                <MenuItem id="replace" mnemonicParsing="false" onAction="#openFindReplaceDialog" text="replace" />
+                <MenuItem id="search" mnemonicParsing="false" onAction="#openFindReplaceDialog" text="search" />
+            </Menu>
+            <Menu id="help" mnemonicParsing="false" text="help" />
+            <Menu id="set" mnemonicParsing="false" text="setting">
+                <MenuItem id="setFont" mnemonicParsing="false" text="font" onAction="#openSettings"/>
+            </Menu>
+        </MenuBar>
+    </top>
+</BorderPane>
